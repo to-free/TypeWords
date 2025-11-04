@@ -220,9 +220,10 @@ async function onTyping(e: KeyboardEvent) {
       wrong = letter
       playBeep()
       volumeIconRef?.play()
-      await sleep(500)
-      if (settingStore.inputWrongClear) input = ''
-      wrong = ''
+      setTimeout(()=>{
+        if (settingStore.inputWrongClear) input = ''
+        wrong = ''
+      },500)
     }
     // 更新当前单词信息
     updateCurrentWordInfo();
